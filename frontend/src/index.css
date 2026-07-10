@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-base-900 text-ink-100 font-sans antialiased;
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(91,127,255,0.07), transparent 40%),
+    radial-gradient(circle at 90% 85%, rgba(52,211,153,0.05), transparent 45%);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: rgba(91,127,255,0.35);
+}
+
+/* thin, unobtrusive scrollbars matching the graphite palette */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #232838; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #2E3446; }
+
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* visible keyboard focus, respecting accessibility */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid #5B7FFF;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Confidence Ribbon — the platform's signature motif: every forecasted
+   number is accompanied by a thin gradient band whose width encodes
+   model confidence. This keeps "this is a probabilistic estimate, not
+   a fact" visually present everywhere, rather than a one-off chart
+   feature. */
+.confidence-ribbon {
+  position: relative;
+  height: 3px;
+  border-radius: 999px;
+  background: #1B2030;
+  overflow: hidden;
+}
+.confidence-ribbon > span {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #5B7FFF, #34D399);
+  border-radius: 999px;
+  transform-origin: left;
+}
