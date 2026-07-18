@@ -1,0 +1,4 @@
+sku,name,category,current_stock,unit_cost,unit_price
+SKU-999,Test Gadget,Electronics,50,15.5,29.99
+SKU-888,Test Widget,Home,100,5.0,9.99
+SKU-777,Test Gizmo,Garden,20,40.0,79.99
