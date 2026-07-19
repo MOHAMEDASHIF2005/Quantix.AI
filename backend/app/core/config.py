@@ -23,7 +23,7 @@ class Settings(BaseSettings):
     ANTHROPIC_API_KEY: str = ""
     GEMINI_API_KEY: str = ""
 
-    CORS_ORIGINS: str = "http://localhost:5173,http://localhost:3000"
+    CORS_ORIGINS: str = "http://localhost:5173,http://localhost:3000,https://quantix-ai-frontend.onrender.com"
 
     # --- Inventory science defaults (overridable per-product) ---
     DEFAULT_SERVICE_LEVEL_Z: float = 1.65  # ~95% service level
